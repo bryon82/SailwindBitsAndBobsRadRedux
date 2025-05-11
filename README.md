@@ -7,7 +7,7 @@ This adds the following items which were in the original Bits and Bobs but have 
 * Meteor showers at night on dates corresponding with the real world calendar, originating from similar points in the sky, and with similar meteor hourly rates. The meteors have been remade to look more realistic in that they are thinner, faster, and fade in and out of view.
 * Lamps on the gate to Dragon Cliffs. The gate lamps are now taken right from an existing Dragon Cliffs lamp and are not a custom lamp. They maintain the aesthetic by having the exact look as the lamps in Dragon Cliffs but are bigger and slightly brighter.
 
-<img src="https://github.com/bryon82/SailwindBitsAndBobsRadRedux/blob/main/Screenshots/Mt_Malefic.png" alt="Screenshot of Mt. Malefic with steam" width="200"/><br>
+<img src="https://github.com/bryon82/SailwindBitsAndBobsRadRedux/blob/main/Screenshots/Mt_Malefic.png" alt="Screenshot of Mt. Malefic with steam" width="500"/><br>
 
 The following functionality from the original Bits and Bobs has been brought over and implemented in this mod in a slightly different way:
 * The removal of ambient player light. It has been implemented as a patch in this mod, no differences will be apparent to the player.
