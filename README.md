@@ -1,4 +1,4 @@
-# BitsAndBobsRadRedux
+# Bits and Bobs - Rad Redux
 
 Inspired by Innsewerants' wonderful mod [Bits and Bobs](https://discord.com/channels/898258030783791164/1218974651603091547).  
 
@@ -6,6 +6,8 @@ This adds the following items which were in the original Bits and Bobs but have 
 * Steam emitting from Mt. Malefic. In this mod it is made more to look like steam and less like smoke. There is also more of a varied emission with random billowing of the steam. The steam will also render behind any fog.
 * Meteor showers at night on dates corresponding with the real world calendar, originating from similar points in the sky, and with similar meteor hourly rates. The meteors have been remade to look more realistic in that they are thinner, faster, and fade in and out of view.
 * Lamps on the gate to Dragon Cliffs. The gate lamps are now taken right from an existing Dragon Cliffs lamp and are not a custom lamp. They maintain the aesthetic by having the exact look as the lamps in Dragon Cliffs but are bigger and slightly brighter.
+
+![Screenshot of Mt. Malefic with steam](https://github.com/bryon82/SailwindBitsAndBobsRadRedux/blob/main/Screenshots/Mt_Malefic.png)  
 
 The following functionality from the original Bits and Bobs has been brought over and implemented in this mod in a slightly different way:
 * The removal of ambient player light. It has been implemented as a patch in this mod, no differences will be apparent to the player.
