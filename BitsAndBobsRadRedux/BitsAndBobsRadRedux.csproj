@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74247C43-4BC4-43D4-B6DC-E9786A045779}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BitsAndBobsRadRedux</RootNamespace>
+    <AssemblyName>BitsAndBobsRadRedux</AssemblyName>
+    <OutputPath>bin\Debug</OutputPath>
+    <ModName>BitsAndBobsRadRedux</ModName>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>E:\SteamLibrary\steamapps\common\Sailwind\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>E:\SteamLibrary\steamapps\common\Sailwind\Sailwind_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>E:\SteamLibrary\steamapps\common\Sailwind\BepInEx\core\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Oculus.VR, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\Sailwind\Sailwind_Data\Managed\Oculus.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>E:\SteamLibrary\steamapps\common\Sailwind\Sailwind_Data\Managed\System.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>E:\SteamLibrary\steamapps\common\Sailwind\Sailwind_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\Sailwind\Sailwind_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\Sailwind\Sailwind_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\Sailwind\Sailwind_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Additions.cs" />
+    <Compile Include="Utilities\AssetLoader.cs" />
+    <Compile Include="Patches.cs" />
+    <Compile Include="BBRR_Plugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Addition\MeteorShower.cs" />
+    <Compile Include="Addition\MeteorShowerScheduler.cs" />
+    <Compile Include="Addition\VolcanoSteamAdjuster.cs" />
+    <Compile Include="Utilities\Configs.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)$(AssemblyName).VS.props" />
+  <ItemGroup>
+    <_CopyItemsAssets Include="C:\Users\Bryon\dev\projects\SailwindMods\BitsAndBobsRadRedux\Assets\bbrr_assets" />
+    <_CopyItemsAssets Include="C:\Users\Bryon\dev\projects\SailwindMods\BitsAndBobsRadRedux\Assets\bbrr_assets.manifest" />
+  </ItemGroup>
+  <Target Name="AfterBuild">
+    <RemoveDir Directories="$(BepInExPluginsDirectory)\$(ModName)" />
+    <Copy SourceFiles="$(ProjectDir)\bin\Debug\$(ModName).dll" DestinationFolder="$(BepInExPluginsDirectory)\$(ModName)" ContinueOnError="true" />
+    <Copy SourceFiles="@(_CopyItemsAssets)" DestinationFolder="$(BepInExPluginsDirectory)\$(ModName)\Assets\%(RecursiveDir)" ContinueOnError="true" />
+  </Target>
+</Project>

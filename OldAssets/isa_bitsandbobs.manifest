@@ -1,0 +1,49 @@
+ManifestFileVersion: 0
+CRC: 2807540358
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2be2ce38132cb9ca0a1de81f6efa8808
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 88e2fa6f19024d2080eaf67fb1683ede
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 122
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+Assets:
+- Assets/Materials/volcanosmokeGrey.mat
+- Assets/Prefabs/VolcanoSmokePrefab.prefab
+- Assets/Textures/tobacco_blue.png
+- Assets/Prefabs/ISA_ShootingStars.prefab
+- Assets/Textures/tobacco_black.png
+- Assets/Textures/tobacco_brown.png
+- Assets/Sound/oldwaterpump-pumping.wav
+- Assets/Textures/tobacco_white.png
+- Assets/Textures/tobacco_green.png
+- Assets/Prefabs/ISA_GateLamp.prefab
+Dependencies: []

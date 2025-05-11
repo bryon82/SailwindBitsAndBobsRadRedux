@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 783972536
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 720d7736e4c7accbec4ba4e4cd3132e1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 946b5f694b2484a918303433c271a332
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+Assets:
+- Assets/Custom/MeteorShower.prefab
+- Assets/Custom/VolcanoSteam.prefab
+Dependencies: []
