@@ -50,7 +50,7 @@ namespace BitsAndBobsRadRedux
             }
 
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), PLUGIN_GUID);
-            
+
             SceneManager.sceneLoaded += SceneLoaded;
         }
 
@@ -72,6 +72,6 @@ namespace BitsAndBobsRadRedux
             Additions.DCGateLampGOs.ForEach(lamp => lamp?.SetActive(addDcGateLamps.Value));
             Additions.MeteorShowerGO?.SetActive(addMeteorShowers.Value);
             Additions.VolcanoSteamGO?.SetActive(addMtMaleficSteam.Value);
-        }            
+        }
     }
 }

@@ -15,11 +15,11 @@ namespace BitsAndBobsRadRedux
         internal static void AddDCGateLights()
         {
             var positions = new Vector3[2]
-            {            
+            {
                 new Vector3(0f, 3.35f, 3.1f),
                 new Vector3(0f, -3.35f, 3.1f)
             };
-            
+
             var scenery = GameObject.Find("island 9 E (dragon cliffs) scenery");
             var parent = scenery.transform.GetComponentsInChildren<Transform>().FirstOrDefault(t => t.name.Equals("east_gate (4)"));
             var lamp = scenery.transform.GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name.Equals("east_street_rope (1)")).GetChild(0);
@@ -30,7 +30,7 @@ namespace BitsAndBobsRadRedux
                 gateLamp.transform.localPosition = position;
                 gateLamp.transform.rotation = Quaternion.Euler(270f, 0f, 0f);
                 gateLamp.GetComponent<Light>().range = 50f;
-                gateLamp.GetComponent<Light>().intensity = 1.8f;
+                gateLamp.GetComponent<Light>().intensity = 1.5f;
                 DCGateLampGOs.Add(gateLamp);
             }
             LogDebug("Dragon Cliffs gate lamps added");
@@ -45,7 +45,7 @@ namespace BitsAndBobsRadRedux
                 LogError("MeteorShower prefab not loaded");
                 yield break;
             }
-            
+
             var meteorShowers = Object.Instantiate(AssetLoader.MeteorShower, Camera.main.transform.position, AssetLoader.MeteorShower.transform.rotation);
             meteorShowers.AddComponent<MeteorShowerScheduler>();
             MeteorShowerGO = meteorShowers;
@@ -60,7 +60,7 @@ namespace BitsAndBobsRadRedux
             {
                 LogError("VolcanoSteam prefab not loaded");
                 yield break;
-            }            
+            }
 
             var parent = Refs.islands[17].transform.GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name.Equals("Cube_001"));
             var volcanoSteam = Object.Instantiate(AssetLoader.VolcanoSteam, parent);

@@ -60,7 +60,7 @@ namespace BitsAndBobsRadRedux
                     declination: 49f,
                     rightAscension: 229.5f
                 ),
-                
+
                 // Gamma Ursae Minorids (mid January)
                 new MeteorShower
                 (
@@ -72,7 +72,7 @@ namespace BitsAndBobsRadRedux
                     declination: 67f,
                     rightAscension: 228f
                 ),
-                
+
                 // Lyrids (April)
                 new MeteorShower
                 (
@@ -84,7 +84,7 @@ namespace BitsAndBobsRadRedux
                     declination: 36.4667f,
                     rightAscension: 271.5f
                 ),
-                
+
                 // Perseids (August)
                 new MeteorShower
                 (
@@ -120,7 +120,7 @@ namespace BitsAndBobsRadRedux
                     declination: 32f,
                     rightAscension: 108.75f
                 ),
-                
+
                 // Quadrantids (end of year, early January)
                 new MeteorShower
                 (

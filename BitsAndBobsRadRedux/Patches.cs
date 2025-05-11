@@ -50,8 +50,8 @@ namespace BitsAndBobsRadRedux
 
                     __instance.green += Time.deltaTime * 2f * bluePotencyMult.Value * 0.33f;
                     PlayerNeeds.sleep -= Time.deltaTime * 0.11f * bluePotencyMult.Value;
-                }                               
+                }
             }
-        }        
+        }
     }
 }
