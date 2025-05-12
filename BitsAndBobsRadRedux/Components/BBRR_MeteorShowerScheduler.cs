@@ -4,23 +4,31 @@ using static BitsAndBobsRadRedux.BBRR_Plugin;
 
 namespace BitsAndBobsRadRedux
 {
-    internal class MeteorShowerScheduler : MonoBehaviour
+    internal class BBRR_MeteorShowerScheduler : MonoBehaviour
     {
-        private const float BACKGROUND_RATE = 0.00014f;
-        private const float BACKGROUND_DECLINATION = 60f;
-        private const float BACKGROUND_RA = 350f;
-        private const float PARTICLE_MULTIPLIER = 10f;
-        private const float RADIUS_FROM_CAMERA = 2500f;
-        private const float START_HOUR = 17f;
-        private const float END_HOUR = 7f;
+        internal static BBRR_MeteorShowerScheduler Instance { get; private set; }
 
         private EmissionModule _emission;
         private ColorOverLifetimeModule _colorOverLifetime;
         private Camera _mainCamera;
         private bool _notified;
 
+        private const float BACKGROUND_RATE = 0.0014f;
+        private const float BACKGROUND_DECLINATION = 60f;
+        private const float BACKGROUND_RA = 350f;
+        private const float RADIUS_FROM_CAMERA = 2500f;
+        private const float START_HOUR = 17f;
+        private const float END_HOUR = 7f;        
+
         private void Start()
         {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            Instance = this;
+
             var particleSystem = GetComponent<ParticleSystem>();
             _emission = particleSystem.emission;
             _colorOverLifetime = particleSystem.colorOverLifetime;
@@ -82,12 +90,12 @@ namespace BitsAndBobsRadRedux
 
                 if (!_notified && shower.GetRateForDay(currentDay) > 0f)
                 {
-                    LogDebug($"{shower.Name} meteor shower tonight: {shower.GetRateForDay(currentDay):0.000} meteors per hour");
+                    LogDebug($"{shower.Name} meteor shower tonight with a rate of {shower.GetRateForDay(currentDay):0.000} meteors per second");
                     _notified = true;
                 }
             }
 
-            _emission.rateOverTime = rate * PARTICLE_MULTIPLIER;
+            _emission.rateOverTime = rate;
 
             var relativePosition = GetRelativePosition(declination, rightAscension);
             transform.position = _mainCamera.transform.position + relativePosition;
@@ -106,13 +114,13 @@ namespace BitsAndBobsRadRedux
                 Mathf.Sin(declination * d2r) * Mathf.Sin(latitude * d2r) +
                 Mathf.Cos(declination * d2r) * Mathf.Cos(latitude * d2r) *
                 Mathf.Cos(hourAngle * d2r);
-            var altitude = Mathf.Asin(sinAltitude) * d2r;
+            var altitude = Mathf.Asin(sinAltitude) * Mathf.Rad2Deg;
 
             var cosAzimuth = 
                 (Mathf.Sin(declination * d2r) -
                 Mathf.Sin(altitude * d2r) * Mathf.Sin(latitude * d2r)) /
                 (Mathf.Cos(altitude * d2r) * Mathf.Cos(latitude * d2r));
-            var azimuth = Mathf.Acos(cosAzimuth) * d2r;
+            var azimuth = Mathf.Acos(cosAzimuth) * Mathf.Rad2Deg;
 
             if (Mathf.Sin(hourAngle * d2r) >= 0f)
                 azimuth = 360f - azimuth;

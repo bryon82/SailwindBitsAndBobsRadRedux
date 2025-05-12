@@ -14,13 +14,14 @@ namespace BitsAndBobsRadRedux
         internal float RightAscension { get; private set; }
 
         internal static List<MeteorShower> MeteorShowers { get; private set; }
+        private const float SECONDS_IN_AN_HOUR = 3600f;
 
         internal MeteorShower(
             string name,
             int startDay,
             int peakDay,
             int endDay,
-            float peakRate,
+            float peakHourlyRate,
             float declination,
             float rightAscension)
         {
@@ -28,7 +29,7 @@ namespace BitsAndBobsRadRedux
             _startDay = startDay;
             _peakDay = peakDay;
             _endDay = endDay;
-            _peakRate = peakRate;
+            _peakRate = peakHourlyRate / SECONDS_IN_AN_HOUR;
             Declination = declination;
             RightAscension = rightAscension;
         }
@@ -49,28 +50,16 @@ namespace BitsAndBobsRadRedux
         {
             MeteorShowers = new List<MeteorShower>
             {
-                // Quadrantids (early January)
+                // Quadrantids (January)
                 new MeteorShower
                 (
                     name: "Quadrantids",
-                    startDay: 1,
-                    peakDay: 4,
+                    startDay: 0,
+                    peakDay: 3,
                     endDay: 12,
-                    peakRate: 0.03069f,
-                    declination: 49f,
-                    rightAscension: 229.5f
-                ),
-
-                // Gamma Ursae Minorids (mid January)
-                new MeteorShower
-                (
-                    name: "Gamma Ursae Minorids",
-                    startDay: 12,
-                    peakDay: 19,
-                    endDay: 22,
-                    peakRate: 0.00097f,
-                    declination: 67f,
-                    rightAscension: 228f
+                    peakHourlyRate: 120f,
+                    declination: 50f,
+                    rightAscension: 232f
                 ),
 
                 // Lyrids (April)
@@ -80,9 +69,21 @@ namespace BitsAndBobsRadRedux
                     startDay: 104,
                     peakDay: 112,
                     endDay: 120,
-                    peakRate: 0.005f,
-                    declination: 36.4667f,
-                    rightAscension: 271.5f
+                    peakHourlyRate: 18f,
+                    declination: 33f,
+                    rightAscension: 272.5f
+                ),
+
+                // Arietids (June)
+                new MeteorShower
+                (
+                    name: "Arietids",
+                    startDay: 142,
+                    peakDay: 158,
+                    endDay: 175,
+                    peakHourlyRate: 60f,
+                    declination: 25f,
+                    rightAscension: 45.5f
                 ),
 
                 // Perseids (August)
@@ -92,9 +93,9 @@ namespace BitsAndBobsRadRedux
                     startDay: 198,
                     peakDay: 224,
                     endDay: 236,
-                    peakRate: 0.02778f,
+                    peakHourlyRate: 100f,
                     declination: 58f,
-                    rightAscension: 48f
+                    rightAscension: 48.25f
                 ),
 
                 // Orionids (October)
@@ -104,33 +105,33 @@ namespace BitsAndBobsRadRedux
                     startDay: 275,
                     peakDay: 295,
                     endDay: 316,
-                    peakRate: 0.00555f,
+                    peakHourlyRate: 20f,
                     declination: 16f,
                     rightAscension: 96f
                 ),
 
-                // Geminids (mid December)
+                // Leonids (November)
+                new MeteorShower
+                (
+                    name: "Leonids",
+                    startDay: 307,
+                    peakDay: 321,
+                    endDay: 334,
+                    peakHourlyRate: 15f,
+                    declination: 21.6f,
+                    rightAscension: 154.25f
+                ),
+
+                // Geminids (December)
                 new MeteorShower
                 (
                     name: "Geminids",
                     startDay: 335,
                     peakDay: 346,
                     endDay: 351,
-                    peakRate: 0.03658f,
+                    peakHourlyRate: 150f,
                     declination: 32f,
                     rightAscension: 108.75f
-                ),
-
-                // Quadrantids (end of year, early January)
-                new MeteorShower
-                (
-                    name: "Quadrantids",
-                    startDay: 362,
-                    peakDay: 365,
-                    endDay: 366, // day 1
-                    peakRate: 0.00052f,
-                    declination: 49f,
-                    rightAscension: 229.5f
                 )
             };
         }

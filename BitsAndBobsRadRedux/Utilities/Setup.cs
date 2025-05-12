@@ -6,14 +6,23 @@ using static BitsAndBobsRadRedux.BBRR_Plugin;
 
 namespace BitsAndBobsRadRedux
 {
-    internal class Additions
+    internal class Setup
     {
-        public static GameObject MeteorShowerGO { get; private set; }
-        public static GameObject VolcanoSteamGO { get; private set; }
-        public static List<GameObject> DCGateLampGOs { get; private set; } = new List<GameObject>();
+        internal static Light PlayerLight { get; private set; }
+        internal static List<GameObject> DCGateLampGOs { get; private set; }
+        internal static GameObject MeteorShowerGO { get; private set; }
+        internal static GameObject VolcanoSteamGO { get; private set; }        
+
+        internal static IEnumerator SetPlayerLight()
+        {
+            yield return new WaitUntil(() => Camera.main.GetComponent<Light>() != null);
+
+            PlayerLight = Camera.main.GetComponent<Light>();
+        }
 
         internal static void AddDCGateLights()
         {
+            DCGateLampGOs = new List<GameObject>();
             var positions = new Vector3[2]
             {
                 new Vector3(0f, 3.35f, 3.1f),
@@ -21,7 +30,7 @@ namespace BitsAndBobsRadRedux
             };
 
             var scenery = GameObject.Find("island 9 E (dragon cliffs) scenery");
-            var parent = scenery.transform.GetComponentsInChildren<Transform>().FirstOrDefault(t => t.name.Equals("east_gate (4)"));
+            var parent = scenery.transform.GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name.Equals("east_gate (4)"));
             var lamp = scenery.transform.GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name.Equals("east_street_rope (1)")).GetChild(0);
             foreach (var position in positions)
             {
@@ -38,7 +47,7 @@ namespace BitsAndBobsRadRedux
 
         internal static IEnumerator AddMeteorShowers()
         {
-            yield return new WaitUntil(() => AssetLoader.AssetsLoaded);
+            yield return new WaitUntil(() => AssetLoader.AssetsLoaded && Camera.main != null);
 
             if (AssetLoader.MeteorShower == null)
             {
@@ -47,7 +56,7 @@ namespace BitsAndBobsRadRedux
             }
 
             var meteorShowers = Object.Instantiate(AssetLoader.MeteorShower, Camera.main.transform.position, AssetLoader.MeteorShower.transform.rotation);
-            meteorShowers.AddComponent<MeteorShowerScheduler>();
+            meteorShowers.AddComponent<BBRR_MeteorShowerScheduler>();
             MeteorShowerGO = meteorShowers;
             LogDebug("Meteor showers added");
         }
@@ -66,7 +75,7 @@ namespace BitsAndBobsRadRedux
             var volcanoSteam = Object.Instantiate(AssetLoader.VolcanoSteam, parent);
             volcanoSteam.transform.localPosition = new Vector3(17.5f, 19f, 235f);
             volcanoSteam.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-            volcanoSteam.AddComponent<VolcanoSteamAdjuster>();
+            volcanoSteam.AddComponent<BBRR_VolcanoSteamAdjuster>();
             VolcanoSteamGO = volcanoSteam;
             LogDebug("Volcano steam added");
         }

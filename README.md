@@ -1,6 +1,8 @@
 # Bits and Bobs - Rad Redux
 
-Inspired by Innsewerants' wonderful mod [Bits and Bobs](https://discord.com/channels/898258030783791164/1218974651603091547).  
+Inspired by Innsewerants' wonderful mod [Bits and Bobs](https://discord.com/channels/898258030783791164/1218974651603091547). I loved the ideas in Bits and Bobs, this mod is merely a different take on the implementation of those ideas. This is not meant to be a replacement, as the two mods can coexist. You can choose features from either by disabling any conflicting ones.  
+
+## Features
 
 This adds the following items which were in the original Bits and Bobs but have been completely remade:
 * Steam emitting from Mt. Malefic. In this mod it is made more to look like steam and less like smoke. There is also more of a varied emission with random billowing of the steam. The steam will also render behind any fog.
@@ -10,8 +12,11 @@ This adds the following items which were in the original Bits and Bobs but have 
 <img src="https://github.com/bryon82/SailwindBitsAndBobsRadRedux/blob/main/Screenshots/Mt_Malefic.png" alt="Screenshot of Mt. Malefic with steam" width="500"/><br>
 
 The following functionality from the original Bits and Bobs has been brought over and implemented in this mod in a slightly different way:
-* The removal of ambient player light. It has been implemented as a patch in this mod, no differences will be apparent to the player.
+* The removal of ambient player light. Very minor change in implementation so you can enable/disable from configuration manager without restarting the game.
+* The ability to activate your lamp when it is in an inventory slot. This mod adds a component to the inventory slots that handles this ability.
 * The potency of blue tobacco is increase as opposed to in Sailwind it having the same effect on the sleep gauge as green tobacco. In this mod smoking blue tobacco will not have a slight random chance of knocking the player out. The potency of blue tobacco can also be configured.
+
+Features from the original mod not implemented in this version of the mod: The secret island, the water bailing mug, and the tobacco box labels.
 
 ### Configurable
 

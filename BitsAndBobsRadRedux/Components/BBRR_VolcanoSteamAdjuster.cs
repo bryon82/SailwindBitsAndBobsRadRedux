@@ -4,7 +4,7 @@ using static BitsAndBobsRadRedux.Configs;
 
 namespace BitsAndBobsRadRedux
 {
-    internal class VolcanoSteamAdjuster : MonoBehaviour
+    internal class BBRR_VolcanoSteamAdjuster : MonoBehaviour
     {
         private EmissionModule _emission;
         private ForceOverLifetimeModule _forceLifetime;

@@ -14,6 +14,7 @@ namespace BitsAndBobsRadRedux
 
         internal static IEnumerator LoadAssets()
         {
+            LogDebug($"Loading assets");
             var bundlePath = Path.Combine(Path.GetDirectoryName(Instance.Info.Location), "Assets", "bbrr_assets");
             var assetBundleRequest = AssetBundle.LoadFromFileAsync(bundlePath);
             yield return assetBundleRequest;
@@ -30,7 +31,7 @@ namespace BitsAndBobsRadRedux
             MeteorShower = request.allAssets.FirstOrDefault(a => a.name.Equals("MeteorShower")) as GameObject;
             VolcanoSteam = request.allAssets.FirstOrDefault(a => a.name.Equals("VolcanoSteam")) as GameObject;
 
-            AssetsLoaded = true;
+            AssetsLoaded = true;            
         }
     }
 }
