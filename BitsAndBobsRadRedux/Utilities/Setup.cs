@@ -11,7 +11,7 @@ namespace BitsAndBobsRadRedux
         internal static Light PlayerLight { get; private set; }
         internal static List<GameObject> DCGateLampGOs { get; private set; }
         internal static GameObject MeteorShowerGO { get; private set; }
-        internal static GameObject VolcanoSteamGO { get; private set; }        
+        internal static GameObject VolcanoSteamGO { get; private set; }
 
         internal static IEnumerator SetPlayerLight()
         {
@@ -47,7 +47,7 @@ namespace BitsAndBobsRadRedux
 
         internal static IEnumerator AddMeteorShowers()
         {
-            yield return new WaitUntil(() => AssetLoader.AssetsLoaded && Camera.main != null);
+            yield return new WaitUntil(() => AssetLoader.AssetsLoaded);
 
             if (AssetLoader.MeteorShower == null)
             {

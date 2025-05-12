@@ -35,10 +35,9 @@ namespace BitsAndBobsRadRedux
             s_logger = Logger;
 
             StartCoroutine(AssetLoader.LoadAssets());
-            Configs.InitializeConfigs();            
+            Configs.InitializeConfigs();
 
-            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), PLUGIN_GUID);
-            StartCoroutine(Setup.AddMeteorShowers());
+            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), PLUGIN_GUID);            
             StartCoroutine(Setup.SetPlayerLight());
             SceneManager.sceneLoaded += SceneLoaded;
         }
@@ -47,6 +46,7 @@ namespace BitsAndBobsRadRedux
         {
             if (scene.name.Equals(OCEAN_SCENE))
             {
+                StartCoroutine(Setup.AddMeteorShowers());
                 StartCoroutine(Setup.AddMaleficSteam());
             }
             if (scene.name.Equals(DRAGON_CLIFFS_SCENE))

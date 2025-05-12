@@ -18,7 +18,8 @@ namespace BitsAndBobsRadRedux
         private const float BACKGROUND_RA = 350f;
         private const float RADIUS_FROM_CAMERA = 2500f;
         private const float START_HOUR = 17f;
-        private const float END_HOUR = 7f;        
+        private const float END_HOUR = 7f;
+        private const float EMISSION_MULT = 10f;
 
         private void Start()
         {
@@ -90,12 +91,12 @@ namespace BitsAndBobsRadRedux
 
                 if (!_notified && shower.GetRateForDay(currentDay) > 0f)
                 {
-                    LogDebug($"{shower.Name} meteor shower tonight with a rate of {shower.GetRateForDay(currentDay):0.000} meteors per second");
+                    LogDebug($"{shower.Name} meteor shower tonight with a rate of {rate * EMISSION_MULT:0.000} meteors per second");
                     _notified = true;
                 }
             }
 
-            _emission.rateOverTime = rate;
+            _emission.rateOverTime = rate * EMISSION_MULT;
 
             var relativePosition = GetRelativePosition(declination, rightAscension);
             transform.position = _mainCamera.transform.position + relativePosition;
