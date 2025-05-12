@@ -1,6 +1,6 @@
 # Bits and Bobs - Rad Redux
 
-Inspired by Innsewerants' wonderful mod [Bits and Bobs](https://discord.com/channels/898258030783791164/1218974651603091547). I loved the ideas in Bits and Bobs, this mod is merely a different take on the implementation of those ideas. This is not meant to be a replacement, as the two mods can coexist. You can choose features from either by disabling any conflicting ones.  
+Inspired by Innsewerants' wonderful mod [Bits and Bobs](https://discord.com/channels/898258030783791164/1218974651603091547). I loved the ideas in Bits and Bobs, this mod is merely a different take on the implementation of those ideas. This is not meant to be a replacement, as the two mods can coexist. You can enable/disable features from either mod to choose the ones you like.  
 
 ## Features
 
