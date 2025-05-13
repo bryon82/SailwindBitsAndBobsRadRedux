@@ -31,7 +31,7 @@ namespace BitsAndBobsRadRedux
             MeteorShower = request.allAssets.FirstOrDefault(a => a.name.Equals("MeteorShower")) as GameObject;
             VolcanoSteam = request.allAssets.FirstOrDefault(a => a.name.Equals("VolcanoSteam")) as GameObject;
 
-            AssetsLoaded = true;            
+            AssetsLoaded = true;
         }
     }
 }

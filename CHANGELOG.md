@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v1.0.0] - yyyy-mm-dd
+## [v1.0.0] - 2025-05-13
 
 ### Added
 - Remake of Mt. Malefic steam

@@ -15,8 +15,8 @@ namespace BitsAndBobsRadRedux
         private readonly Color32[] _lightingColors = new Color32[4]
         {
             new Color32(0x1D, 0x1C, 0x1B, 0xEE),    // Night
-            new Color32(0x26, 0x26, 0x26, 0xEE),    // Dawn start / Dusk end            
-            new Color32(0xD6, 0xBA, 0x84, 0xEE),    // Dawn end / Dusk start            
+            new Color32(0x26, 0x26, 0x26, 0xEE),    // Dawn start / Dusk end
+            new Color32(0xD6, 0xBA, 0x84, 0xEE),    // Dawn end / Dusk start
             new Color32(0xFF, 0xF6, 0xEA, 0xEE)     // Day
         };
 
@@ -96,10 +96,10 @@ namespace BitsAndBobsRadRedux
         }
 
         private void UpdateWindForce()
-        {   
+        {
             var windVector = _wind.outCurrentBaseWind * _wind.outCurrentMagnitude;
             _forceLifetime.x = new MinMaxCurve(windVector.x * Time.deltaTime / 18f);
-            _forceLifetime.y = new MinMaxCurve((0f - windVector.z) * Time.deltaTime / 18f);            
+            _forceLifetime.y = new MinMaxCurve((0f - windVector.z) * Time.deltaTime / 18f);
         }
 
         private void UpdateDayNightColor()
@@ -113,7 +113,7 @@ namespace BitsAndBobsRadRedux
                 foreach (var transition in _colorTransitions)
                 {
                     if (localTime > transition.startTime && localTime <= transition.endTime)
-                    {                        
+                    {
                         var startColor = _lightingColors[transition.startColorIndex];
                         var endColor = _lightingColors[transition.endColorIndex];
                         var t = (localTime - transition.startTime) / (transition.endTime - transition.startTime);
@@ -125,5 +125,5 @@ namespace BitsAndBobsRadRedux
 
             _material.SetColor("_Color", currentColor);
         }
-    }    
+    }
 }

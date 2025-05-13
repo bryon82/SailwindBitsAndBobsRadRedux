@@ -6,17 +6,17 @@ Inspired by Innsewerants' wonderful mod [Bits and Bobs](https://discord.com/chan
 
 This adds the following items which were in the original Bits and Bobs but have been completely remade:
 * Steam emitting from Mt. Malefic. In this mod it is made more to look like steam and less like smoke. There is also more of a varied emission with random billowing of the steam. The steam will also render behind any fog.
-* Meteor showers at night on dates corresponding with the real world calendar, originating from similar points in the sky, and with similar meteor hourly rates. The meteors have been remade to look more realistic in that they are thinner, faster, and fade in and out of view.
+* Meteor showers at night on dates corresponding with the real world calendar, originating from similar points in the sky, and with similar meteor hourly rates (adjusted for the shorter in game hour). The meteors have been remade to look more realistic in that they are thinner, faster, and fade in and out of view.
 * Lamps on the gate to Dragon Cliffs. The gate lamps are now taken right from an existing Dragon Cliffs lamp and are not a custom lamp. They maintain the aesthetic by having the exact look as the lamps in Dragon Cliffs but are bigger and slightly brighter.
 
 <img src="https://github.com/bryon82/SailwindBitsAndBobsRadRedux/blob/main/Screenshots/Mt_Malefic.png" alt="Screenshot of Mt. Malefic with steam" width="500"/><br>
 
 The following functionality from the original Bits and Bobs has been brought over and implemented in this mod in a slightly different way:
-* The removal of ambient player light. Very minor change in implementation so you can enable/disable from configuration manager without restarting the game.
+* The ability to deactivate ambient player light. Very minor change in implementation so you can enable/disable from configuration manager without restarting the game.
 * The ability to activate your lamp when it is in an inventory slot. This mod adds a component to the inventory slots that handles this ability.
-* The potency of blue tobacco is increase as opposed to in Sailwind it having the same effect on the sleep gauge as green tobacco. In this mod smoking blue tobacco will not have a slight random chance of knocking the player out. The potency of blue tobacco can also be configured.
+* The potency of blue tobacco is increase as opposed to in Sailwind it having the same effect on the sleep gauge as green tobacco. In this mod smoking blue tobacco will not have a slight random chance of knocking the player out. The potency of blue tobacco can also be configured.  
 
-Features from the original mod not implemented in this version of the mod: The secret island, the water bailing mug, and the tobacco box labels.
+Features from the original mod not implemented in this version of the mod: The secret island, the water bailing mug, and the tobacco box labels.  
 
 ### Configurable
 

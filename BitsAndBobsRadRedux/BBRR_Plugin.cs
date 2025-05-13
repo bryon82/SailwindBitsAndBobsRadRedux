@@ -37,7 +37,7 @@ namespace BitsAndBobsRadRedux
             StartCoroutine(AssetLoader.LoadAssets());
             Configs.InitializeConfigs();
 
-            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), PLUGIN_GUID);            
+            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), PLUGIN_GUID);
             StartCoroutine(Setup.SetPlayerLight());
             SceneManager.sceneLoaded += SceneLoaded;
         }
